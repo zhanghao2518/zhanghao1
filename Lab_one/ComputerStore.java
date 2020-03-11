@@ -32,16 +32,28 @@ public class ComputerStore {
     public void showWork(Computer cp) {
     	cp.printWork();
     }
+    public void showList() {
+    	showIntroduce(cp1);
+    	showWork(cp1);
+    	showIntroduce(cp2);
+    	showWork(cp2);
+    	showIntroduce(cp3);
+    	showWork(cp3);
+    }
     
     public static void main(String[] args) {
-    	//组装第一台电脑
-    	Computer cp = new Computer("Dell",new Intel_CPU(),new Samsung_Memory(),new Seagate_HardDisk(),new Asus_MainBoard());
     	ComputerStore cps = new ComputerStore();
-    	cps.setCp1(cp);
-    	cps.showIntroduce(cps.getCp1());
-    	System.out.println();
-    	cps.showPrice(cps.getCp1());
-    	System.out.println();
-    	cps.showWork(cps.getCp1());
+    	//组装第一台电脑
+    	Computer Cp1 = new Computer("Dell1",new Intel_CPU(),new Samsung_Memory(),new Seagate_HardDisk(),new Asus_MainBoard());
+    	cps.setCp1(Cp1);
+    	//组装第二台电脑
+    	Computer Cp2 = new Computer("Dell2",new Intel_CPU(),new Samsung_Memory(),new Seagate_HardDisk(),new Asus_MainBoard());
+    	cps.setCp2(Cp2);
+    	//组装第三台电脑
+    	Computer Cp3 = new Computer("Dell3",new Intel_CPU(),new Samsung_Memory(),new Seagate_HardDisk(),new Asus_MainBoard());
+    	cps.setCp3(Cp3);
+    	//展示一览表
+    	cps.showList();
+    	
     }
 }
